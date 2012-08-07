@@ -1,0 +1,272 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>James Bond Intro recreated with...well...not a lot!</title>
+<style type="text/css">
+.jp-single-player {display: none;}
+body {
+	margin-top: 0px;
+	background-color:#000000; 
+	font-family: 	georgia, times, serif;
+	font-size: 48px;
+ 
+	color: #FFFFFF; 
+	font-size:14px;
+}
+a, a:visited { 
+	color:#fff; 
+	text-decoration:none; 
+	outline:none; 
+}
+#wrapper {
+	width: 562px;
+	margin: 0 auto 0 auto;
+}
+	
+#video {
+	width: 560px;
+	height: 300px;
+	position:fixed;
+	background-color:#000000;
+	border: 1px solid black;
+	margin-top: 150px;
+	overflow: hidden;
+}
+#dot	{
+	position: absolute;
+	left: -45px;
+	top: 130px;
+	background-image: url(dot.png);
+	background-repeat:no-repeat;
+	height:90px;
+	width: 90px;
+}
+#dot2	{
+	position: absolute;
+	left: 145px;
+	top: 130px;
+	background-image: url(dot2.png);
+	background-repeat:no-repeat;
+	height:90px;
+	width: 90px;
+	display:none;
+}
+#dot3	{
+	position: absolute;
+	left: 290px;
+	top: 130px;
+	background-image: url(dot3.png);
+	background-repeat:no-repeat;
+	height:90px;
+	width: 90px;
+	display:none;
+}
+#presents	{
+	position: absolute;
+	width: 400px;
+	height:125px;
+	background-image:url(presents.png);
+	background-repeat:no-repeat;
+	display:none;
+	left: 100px;
+	top:105px;
+}
+#bond	{
+	width: 560px;
+	height: 300px;
+	position: absolute;
+	left:10px;
+	background-image:url(bond.png);
+	background-repeat:no-repeat;
+	display:none;
+}
+#barrelend	{
+	width: 560px;
+	height: 300px;
+	position: absolute;
+	left:35px;
+	background-image:url(barrelend.png);
+	background-repeat:no-repeat;
+	display:none;
+}
+#barrel	{
+	width: 1000px;
+	height: 600px;
+	position: absolute;
+	left: -45px;
+	top: -150px;
+	background-image:url(barrel.png);
+	background-repeat:no-repeat;
+	display:none;
+}
+#blood	{
+	width: 560px;
+	height: 500px;
+	position:absolute;
+	top:-500px;
+	background-image:url(blood.png);
+	background-repeat:no-repeat;
+}
+#toggle {
+	height:19px;
+	width:50px;
+	position:absolute;
+	top:300px;
+	left:50%;
+}
+#shooglebond	{
+	width:230px;
+	height:300px;
+	position:absolute;
+	background-image:url(shooglebond.png);
+	background-repeat:no-repeat;
+	display:none;
+}
+#details	{
+	width: 330px;
+	height:300px;
+	position:absolute;
+	left:230px;
+	display:none;
+}
+</style>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.pack.js"></script>
+<script type="text/javascript" src="jquery.jplayer.min.js"></script>
+<script type="text/javascript" src="demos.common.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#toggle").click(function() {
+	
+	var jpPlayTime = $("#jplayer_play_time");
+	var jpTotalTime = $("#jplayer_total_time");
+	var jpStatus = $("#demo_status"); 
+
+	$("#jquery_jplayer").jPlayer({
+		ready: function () {
+			this.element.jPlayer("setFile", "James Bond Intro.mp3", "James Bond Intro.ogg").jPlayer("play");
+			
+		},
+		volume: 50,
+		oggSupport: true,
+		preload: 'none'
+	})
+	.jPlayer("onProgressChange", function(loadPercent, playedPercentRelative, playedPercentAbsolute, playedTime, totalTime) {
+		jpPlayTime.text($.jPlayer.convertTime(playedTime));
+		jpTotalTime.text($.jPlayer.convertTime(totalTime));
+
+		demoStatusInfo(this.element, jpStatus); 
+	})
+	.jPlayer("onSoundComplete", function() {
+		this.element.jPlayer("pause");
+	});
+});
+ });
+</script>
+<script type="text/javascript">
+        $(function() {
+            $("#toggle").click(function() {
+                $("#toggle").fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#dot").animate({ left: "150" }, 700, "swing").fadeOut("fast").fadeIn("fast").animate({ left: "300" }, 700, "swing").fadeOut("fast").fadeIn("fast").animate({ left: "450" }, 700, "swing").delay(3400).delay(1500).fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#dot2").delay(600).fadeIn("slow").delay(500).fadeOut("fast");
+			});
+			$("#toggle").click(function() {
+                $("#dot3").delay(1800).fadeIn("slow").delay(500).fadeOut("fast");
+			});
+			$("#toggle").click(function() {
+                $("#toggle").fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#presents").delay(2800).fadeIn("slow").delay(3500).fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#barrelend").delay(8300).fadeIn(2000).delay(1500).fadeOut("fast");		
+            });
+			$("#toggle").click(function() {
+                $("#bond").delay(9000).fadeIn("slow").delay(16500).fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#barrel").delay(8000).fadeIn("slow").delay(3000).animate({ left: "-260" }, 1500, "swing").animate({ left: "-210" }, 1000, "swing").delay(6500).animate({ left: "-250" }, 1000, "swing").animate({ left: "-210" }, 1000, "swing").animate({ left: "-235" }, 1000, "swing").animate({ left: "-200" }, 1500, "swing").animate({ left: "-235", marginTop: "50px" }, 1400, "swing").fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#blood").delay(14000).animate({ marginTop: "430", }, 7500, "swing").delay(5000).fadeOut("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#shooglebond").delay(28500).fadeIn("slow");		
+            });
+			$("#toggle").click(function() {
+                $("#details").delay(31500).fadeIn("slow");		
+            });
+		  });
+    </script>
+
+</head>
+<body>
+<div id="wrapper">
+        <div id="video">
+			<div id="dot"></div>
+            <div id="dot2"></div>
+            <div id="dot3"></div>
+            <div id="presents"></div>
+            <div id="bond"></div>
+            <div id="barrelend"></div>
+            <div id="barrel"></div>
+            <div id="blood"></div>
+            <div id="shooglebond"></div>
+            <div id="details">
+            	<p><h2>No flash, no video, not much programming knowledge...</h2></p>
+                <p>...or how a monkey with 2 brain cells can recreate the James Bond intro using a few div elements, and a couple of jQuery effects only.</p>
+                <img src="signature.png" />
+                <p align="right"><a href="http://shoogledesigns.com/blog/2010/12/10/create-a-movie-intro-with-basic-jquery-effects/" target="_blank"><b>+ How does this work?</b></a></p>
+                <p align="right"><a href="http://twitter.com/shoogledesigns" target="_blank"><b>+ Follow me</b></a></p>
+            </div>
+        </div>
+        <div id="toggle"><a href="#" id="jplayer_play" class="jp-play"><img src="toggle.png" /></a></div>
+</div>
+<div id="jquery_jplayer"></div>
+
+		<div class="jp-single-player">
+			<div class="jp-interface">
+				<ul class="jp-controls">
+					<li><a href="#" id="jplayer_play" class="jp-play" tabindex="1">play</a></li>
+					<li><a href="#" id="jplayer_pause" class="jp-pause" tabindex="1">pause</a></li>
+					<li><a href="#" id="jplayer_stop" class="jp-stop" tabindex="1">stop</a></li>
+					<li><a href="#" id="jplayer_volume_min" class="jp-volume-min" tabindex="1">min volume</a></li>
+					<li><a href="#" id="jplayer_volume_max" class="jp-volume-max" tabindex="1">max volume</a></li>
+				</ul>
+				<div class="jp-progress">
+					<div id="jplayer_load_bar" class="jp-load-bar">
+						<div id="jplayer_play_bar" class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div id="jplayer_volume_bar" class="jp-volume-bar">
+					<div id="jplayer_volume_bar_value" class="jp-volume-bar-value"></div>
+				</div>
+				<div id="jplayer_play_time" class="jp-play-time"></div>
+				<div id="jplayer_total_time" class="jp-total-time"></div>
+			</div>
+			<div id="jplayer_playlist" class="jp-playlist">
+
+				<ul>
+					<li>Bubble</li>
+				</ul>
+			</div>
+		</div>
+
+<script type="text/javascript">													
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try{
+var pageTracker = _gat._getTracker("UA-12776692-1");
+pageTracker._trackPageview();
+} catch(err) {}
+</script>
+
+</body>
+</html>
